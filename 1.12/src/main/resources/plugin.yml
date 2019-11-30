@@ -1,0 +1,103 @@
+name: CoreProtectReloaded
+main: com.github.kisaragieffective.coreprotectreloaded.r12.CoreProtectReloaded
+version: 0.1.5
+website: https://github.com/kisaragieffective/CoreProtectReloaded
+author: KisaragiEffective
+depend:
+  - CoreProtectReloadedCommon
+  - BukkitShortcut
+description: >
+  Provides block protection for your server.
+commands:
+  coreprotectreloaded:
+    description: Utilize the plugin
+    usage: |
+    aliases:
+      - cpr
+      - corerel
+      - cp
+  dbupdate:
+    description: "[UNSAFE]"
+    permission: "coreprotectreloaded.unsafe.dbupdate"
+permissions:
+  coreprotectreloaded.*:
+    description: Gives access to all CoreProtect actions and commands
+    default: false
+    children:
+      coreprotectreloaded.rollback: true
+      coreprotectreloaded.restore: true
+      coreprotectreloaded.inspect: true
+      coreprotectreloaded.help: true
+      coreprotectreloaded.purge: true
+      coreprotectreloaded.lookup: true
+      coreprotectreloaded.lookup.chat: true
+      coreprotectreloaded.lookup.command: true
+      coreprotectreloaded.lookup.session: true
+      coreprotectreloaded.lookup.username: true
+      coreprotectreloaded.lookup.block: true
+      coreprotectreloaded.lookup.click: true
+      coreprotectreloaded.lookup.container: true
+      coreprotectreloaded.lookup.kill: true
+      coreprotectreloaded.reload: true
+      coreprotectreloaded.unsafe.*: true
+  coreprotectreloaded.unsafe.*:
+    default: false
+    children:
+      coreprotectreloaded.unsafe.dbupdate: true
+  coreprotectreloaded.unsafe.dbupdate:
+    default: false
+    description: Permission to use /dbupdate
+  coreprotectreloaded.lookup:
+    description: Has permission to use the lookup command
+    default: false
+    children:
+      coreprotectreloaded.lookup.chat: true
+      coreprotectreloaded.lookup.command: true
+      coreprotectreloaded.lookup.session: true
+      coreprotectreloaded.lookup.username: true
+      coreprotectreloaded.lookup.block: true
+      coreprotectreloaded.lookup.click: true
+      coreprotectreloaded.lookup.container: true
+      coreprotectreloaded.lookup.kill: true
+  coreprotectreloaded.lookup.chat:
+    description: Has permission to lookup chat messages
+    default: false
+  coreprotectreloaded.lookup.command:
+    description: Has permission to lookup player commands
+    default: false
+  coreprotectreloaded.lookup.session:
+    description: Has permission to lookup player sessions
+    default: false
+  coreprotectreloaded.lookup.username:
+    description: Has permission to lookup player username changes
+    default: false
+  coreprotectreloaded.lookup.block:
+    description: Has permission to lookup block data
+    default: false
+  coreprotectreloaded.lookup.click:
+    description: Has permission to lookup player interactions
+    default: false
+  coreprotectreloaded.lookup.container:
+    description: Has permission to lookup container transactions
+    default: false
+  coreprotectreloaded.lookup.kill:
+    description: Has permission to lookup entity kills
+    default: false
+  coreprotectreloaded.rollback:
+    description: Has permission to perform rollbacks
+    default: false
+  coreprotectreloaded.restore:
+    description: Has permission to perform restores
+    default: false
+  coreprotectreloaded.inspect:
+    description: Has permission to use the inspector
+    default: false
+  coreprotectreloaded.help:
+    description: Has permission to use the help command
+    default: false
+  coreprotectreloaded.purge:
+    description: Has permission to use the purge command
+    default: false
+  coreprotectreloaded.reload:
+    description: Has permission to use the reload command
+    default: false
